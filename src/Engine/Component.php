@@ -17,7 +17,8 @@
  * Define namespace
  */
 namespace Backdrop\Template\View\Engine;
-use Backdrop\Proxies\App;
+
+use Backdrop\Core\Proxies\App;
 use Backdrop\Template\View\View\Component as View;
 use Backdrop\Tools\Collection;
 
