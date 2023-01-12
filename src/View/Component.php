@@ -180,7 +180,7 @@ class Component implements ViewContract {
      * @access public
      * @return void
      */
-    public function display() {
+    public function display(): void {
 
         // Compatibility with core WP's template parts.
         $this->templatePartCompat();
@@ -212,7 +212,7 @@ class Component implements ViewContract {
      * @access public
      * @return string
      */
-    public function render() {
+    public function render(): string {
         ob_start();
         $this->display();
         return ob_get_clean();
