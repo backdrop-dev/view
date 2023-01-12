@@ -82,9 +82,9 @@ class Component implements ViewContract {
      * @access public
      * @param string $name
      * @param array $slugs
-     * @param array|Collection $data
+     * @param array|Collection|null $data
      */
-	public function __construct( string $name, array $slugs = [], array|Collection $data = [] ) {
+	public function __construct( string $name, array $slugs = [], array|Collection $data = null ) {
 
 		$this->name  = $name;
 		$this->slugs = ( array ) $slugs;
