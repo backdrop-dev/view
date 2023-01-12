@@ -18,7 +18,7 @@
  */
 namespace Backdrop\Template\View\Engine;
 
-use Backdrop\Core\Proxies\App;
+use Backdrop\Proxies\App;
 use Backdrop\Template\View\View\Component as View;
 use Backdrop\Tools\Collection;
 
