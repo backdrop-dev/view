@@ -18,6 +18,7 @@
  */
 namespace Backdrop\Template\View\Engine;
 
+use Backdrop\Proxies\App;
 use Backdrop\Template\View\View\Component as View;
 use Backdrop\Tools\Collection;
 
@@ -49,7 +50,7 @@ class Component {
         // in views.
         $data->add( 'engine', $this );
 
-        return \Backdrop\Proxies\App::resolve( View::class, compact( 'name', 'slugs', 'data' ) );
+        return App::resolve( View::class, compact( 'name', 'slugs', 'data' ) );
     }
 
     /**
