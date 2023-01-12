@@ -75,17 +75,16 @@ class Component implements ViewContract {
 	 */
 	protected ?string $template = null;
 
-	/**
-	 * Sets up the view properties.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @param  string  $name
-	 * @param  array   $slugs
-	 * @param $data
-	 * @return void
-	 */
-	public function __construct( string $name, array $slugs = [], $data = null ) {
+    /**
+     * Sets up the view properties.
+     *
+     * @since  1.0.0
+     * @access public
+     * @param string $name
+     * @param array $slugs
+     * @param array|Collection|null $data
+     */
+	public function __construct( string $name, array $slugs = [], array|Collection $data = null ) {
 
 		$this->name  = $name;
 		$this->slugs = ( array ) $slugs;
