@@ -18,7 +18,6 @@
  */
 namespace Backdrop\Template\View\Engine;
 
-use Backdrop\Proxies\App;
 use Backdrop\Template\View\View\Component as View;
 use Backdrop\Tools\Collection;
 
@@ -33,14 +32,14 @@ class Component {
     /**
      * Returns a View object.
      *
-     * @since  5.1.0
+     * @since  1.0.0
      * @access public
      * @param  string            $name
      * @param  array|string      $slugs
      * @param  array|Collection  $data
      * @return View
      */
-    public function view( $name, $slugs = [], $data = [] ) {
+    public function view( string $name, array|string $slugs = [], array|Collection $data = [] ): View {
 
         if ( ! $data instanceof Collection ) {
             $data = new Collection( (array) $data );
@@ -50,13 +49,13 @@ class Component {
         // in views.
         $data->add( 'engine', $this );
 
-        return App::resolve( View::class, compact( 'name', 'slugs', 'data' ) );
+        return \Backdrop\Proxies\App::resolve( View::class, compact( 'name', 'slugs', 'data' ) );
     }
 
     /**
      * Outputs a view template.
      *
-     * @since  5.1.0
+     * @since  1.0.0
      * @access public
      * @param  string            $name
      * @param  array|string      $slugs
@@ -70,7 +69,7 @@ class Component {
     /**
      * Returns a view template as a string.
      *
-     * @since  5.1.0
+     * @since  1.0.0
      * @access public
      * @param  string            $name
      * @param  array|string      $slugs

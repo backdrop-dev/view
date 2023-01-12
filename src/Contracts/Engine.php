@@ -15,6 +15,8 @@
  */
 namespace Backdrop\Template\View\Contracts;
 
+use Backdrop\Tools\Collection;
+
 /**
  * Engine interface.
  * 
@@ -26,7 +28,7 @@ interface Engine {
     /**
      * Returns a View object.
      *
-     * @since  5.1.0
+     * @since  1.0.0
      * @access public
      * @param  string            $name
      * @param  array|string      $slugs
@@ -38,7 +40,7 @@ interface Engine {
     /**
      * Outputs a view template.
      *
-     * @since  5.1.0
+     * @since  1.0.0
      * @access public
      * @param  string            $name
      * @param  array|string      $slugs
@@ -50,12 +52,12 @@ interface Engine {
     /**
      * Returns a view template as a string.
      *
-     * @since  5.1.0
+     * @since  1.0.0
      * @access public
      * @param  string            $name
      * @param  array|string      $slugs
      * @param  array|Collection  $data
      * @return string
      */
-    function render( $name, $slugs = [], $data = [] );
+    function render( string $name, array|string $slugs = [], array|Collection $data = [] ): void;
 }

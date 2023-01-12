@@ -8,6 +8,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/benlumia007/backdrop-template-helpers" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/benlumia007/backdrop-tools" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/benlumia007/backdrop" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/benlumia007/backdrop-contracts" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
