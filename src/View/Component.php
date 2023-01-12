@@ -53,9 +53,9 @@ class Component implements ViewContract {
      *
      * @since  1.0.0
      * @access protected
-     * @var    string
+     * @var    string|array
      */
-    protected $slugs = [];
+    protected string|array $slugs = [];
 
     /**
      * An array of data that is passed into the view template.
