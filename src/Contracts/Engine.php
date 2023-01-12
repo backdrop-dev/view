@@ -22,39 +22,40 @@ namespace Backdrop\Template\View\Contracts;
  * @access public
  */
 interface Engine {
+
     /**
      * Returns a View object.
-     * 
+     *
      * @since  1.0.0
      * @access public
-     * @param  string           $name
-     * @param  array|string     $slugs
-     * @param  array|Collection $data
-     * @return View
+     * @param  string	$name
+     * @param  array	$slugs
+     * @param  array	$data
+     * @return void
      */
-    public function view( string $name, array|string $slugs = [], array|Collection $data = [] ): View;
+    public function view( string $name, array $slugs = [], array $data = [] ): void;
 
     /**
      * Outputs a view template.
-     * 
+     *
      * @since  1.0.0
      * @access public
-     * @param  string           $name
-     * @param  array|string     $slugs
-     * @param  array|Collection $data
+     * @param  string	$name
+     * @param  array	$slugs
+     * @param  array	$data
      * @return void
      */
-    public function display( string $name, array|string $slugs = [], array|Collection $data = [] ): void;
+    public function display( string $name, array $slugs = [], array $data = [] ): void;
 
     /**
      * Returns a view template as a string.
-     * 
+     *
      * @since  1.0.0
      * @access public
-     * @param  string           $name
-     * @param  array|string     $slugs
-     * @param  array|Collection $data
+     * @param  string	$name
+     * @param  array	$slugs
+     * @param  array	$data
      * @return void
      */
-    public function render( string $name, array|string $slugs = [], array|Collection $data = [] ): void;
+    public function render( string $name, array $slugs = [], array $data = [] );
 }

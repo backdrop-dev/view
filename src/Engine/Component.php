@@ -29,54 +29,55 @@ use Backdrop\Tools\Collection;
  * @access public
  */
 class Component {
-	/**
-	 * Returns a View object.
-	 *
-	 * @since  1.0.0
-	 * @access public
+
+    /**
+     * Returns a View object.
+     *
+     * @since  1.0.0
+     * @access public
+     * @param string $name
+     * @param array	 $slugs
+     * @param array|Collection  $data
+     * @return View
+     */
+    public function view( string $name, array $slugs = [], array|Collection $data = [] ): View {
+
+        if ( ! $data instanceof Collection ) {
+            $data = new Collection( ( array ) $data );
+        }
+
+        $data->add( 'engine', $this );
+
+        return App::resolve( View::class, compact( 'name', 'slugs', 'data' ) );
+    }
+
+    /**
+     * Outputs a view template.
+     *
+     * @since  1.0.0
+     * @access public
      * @param  string           $name
-     * @param  array|string     $slugs
+     * @param  array            $slugs
      * @param  array|Collection $data
-	 * @return View
-	 */
-	public function view( string $name, array|string $slugs = [], array|Collection $data = [] ): View {
-		
-		if ( ! $data instanceof Collection ) {
-			$data = new Collection( ( array ) $data );
-		}
+     * @return void
+     */
+    public function display( string $name, array $slugs = [], array|Collection $data = [] ): void {
 
-		$data->add( 'engine', $this );
+        $this->view( $name, $slugs, $data )->display();
+    }
 
-		return App::resolve( View::class, compact( 'name', 'slugs', 'data' ) );
-	}
-
-	/**
-	 * Outputs a view template.
-	 *
-	 * @since  1.0.0
-	 * @access public
+    /**
+     * Returns a view template as a string.
+     *
+     * @since  1.0.0
+     * @access public
      * @param  string           $name
-     * @param  array|string     $slugs
+     * @param  array            $slugs
      * @param  array|Collection $data
-	 * @return void
-	 */
-	public function display( string $name, array|string $slugs = [], array|Collection $data = [] ): void {
+     * @return string
+     */
+    public function render( string $name, array $slugs = [], array|Collection $data = [] ): string {
 
-		$this->view( $name, $slugs, $data )->display();
-	}
-
-	/**
-	 * Returns a view template as a string.
-	 *
-	 * @since  1.0.0
-	 * @access public
-     * @param  string           $name
-     * @param  array|string     $slugs
-     * @param  array|Collection $data
-	 * @return string
-	 */
-	public function render( string $name, array|string $slugs = [], array|Collection $data = [] ): string {
-
-		return $this->view( $name, $slugs, $data )->render();
-	}
+        return $this->view( $name, $slugs, $data )->render();
+    }
 }
