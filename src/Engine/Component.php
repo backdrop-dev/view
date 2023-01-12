@@ -33,19 +33,21 @@ class Component {
     /**
      * Returns a View object.
      *
-     * @since  1.0.0
+     * @since  5.1.0
      * @access public
-     * @param string $name
-     * @param array	 $slugs
-     * @param array|Collection  $data
+     * @param  string            $name
+     * @param  array|string      $slugs
+     * @param  array|Collection  $data
      * @return View
      */
-    public function view( string $name, array $slugs = [], array|Collection $data = [] ): View {
+    public function view( $name, $slugs = [], $data = [] ) {
 
         if ( ! $data instanceof Collection ) {
-            $data = new Collection( ( array ) $data );
+            $data = new Collection( (array) $data );
         }
 
+        // Pass the engine itself along so that it can be used directly
+        // in views.
         $data->add( 'engine', $this );
 
         return App::resolve( View::class, compact( 'name', 'slugs', 'data' ) );
@@ -54,30 +56,28 @@ class Component {
     /**
      * Outputs a view template.
      *
-     * @since  1.0.0
+     * @since  5.1.0
      * @access public
-     * @param  string           $name
-     * @param  array            $slugs
-     * @param  array|Collection $data
+     * @param  string            $name
+     * @param  array|string      $slugs
+     * @param  array|Collection  $data
      * @return void
      */
-    public function display( string $name, array $slugs = [], array|Collection $data = [] ): void {
-
+    public function display( $name, $slugs = [], $data = [] ) {
         $this->view( $name, $slugs, $data )->display();
     }
 
     /**
      * Returns a view template as a string.
      *
-     * @since  1.0.0
+     * @since  5.1.0
      * @access public
-     * @param  string           $name
-     * @param  array            $slugs
-     * @param  array|Collection $data
+     * @param  string            $name
+     * @param  array|string      $slugs
+     * @param  array|Collection  $data
      * @return string
      */
-    public function render( string $name, array $slugs = [], array|Collection $data = [] ): string {
-
+    public function render( $name, $slugs = [], $data = [] ) {
         return $this->view( $name, $slugs, $data )->render();
     }
 }

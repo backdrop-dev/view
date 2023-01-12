@@ -26,36 +26,36 @@ interface Engine {
     /**
      * Returns a View object.
      *
-     * @since  1.0.0
+     * @since  5.1.0
      * @access public
-     * @param  string	$name
-     * @param  array	$slugs
-     * @param  array	$data
-     * @return void
+     * @param  string            $name
+     * @param  array|string      $slugs
+     * @param  array|Collection  $data
+     * @return View
      */
-    public function view( string $name, array $slugs = [], array $data = [] ): void;
+    public function view( string $name, array|string $slugs = [], array|Collection $data = [] ): View;
 
     /**
      * Outputs a view template.
      *
-     * @since  1.0.0
+     * @since  5.1.0
      * @access public
-     * @param  string	$name
-     * @param  array	$slugs
-     * @param  array	$data
+     * @param  string            $name
+     * @param  array|string      $slugs
+     * @param  array|Collection  $data
      * @return void
      */
-    public function display( string $name, array $slugs = [], array $data = [] ): void;
+    public function display( string $name, array|string $slugs = [], array|Collection $data = [] ): void;
 
     /**
      * Returns a view template as a string.
      *
-     * @since  1.0.0
+     * @since  5.1.0
      * @access public
-     * @param  string	$name
-     * @param  array	$slugs
-     * @param  array	$data
-     * @return void
+     * @param  string            $name
+     * @param  array|string      $slugs
+     * @param  array|Collection  $data
+     * @return string
      */
-    public function render( string $name, array $slugs = [], array $data = [] );
+    function render( $name, $slugs = [], $data = [] );
 }
