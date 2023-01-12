@@ -152,7 +152,7 @@ class Component implements ViewContract {
      * @access protected
      * @return string
      */
-    protected function locate() {
+    protected function locate(): string {
         return locate_template( $this->hierarchy() );
     }
 
@@ -227,7 +227,7 @@ class Component implements ViewContract {
      * @access protected
      * @return void
      */
-    protected function templatePartCompat() {
+    protected function templatePartCompat(): void {
 
         // The slug is a string in WP and we have an array. So, we're
         // just going to use the first item of the array in this case.
@@ -253,7 +253,7 @@ class Component implements ViewContract {
      * @access protected
      * @return void
      */
-    protected function maybeShiftAttachment() {
+    protected function maybeShiftAttachment(): void {
 
         if ( ! in_the_loop() || 'attachment' !== get_post_type() ) {
             return;
