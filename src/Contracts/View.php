@@ -13,6 +13,7 @@
  * Define namespace
  */
 namespace Backdrop\Template\View\Contracts;
+
 use Backdrop\Contracts\Displayable;
 use Backdrop\Contracts\Renderable;
 
@@ -31,7 +32,7 @@ interface View extends Renderable, Displayable {
 	 * @access public
 	 * @return array
 	 */
-	public function slugs();
+	public function slugs(): array;
 
 	/**
 	 * Returns the absolute path to the template file.
@@ -40,5 +41,5 @@ interface View extends Renderable, Displayable {
 	 * @access public
 	 * @return string
 	 */
-	public function template();
+	public function template(): string;
 }

@@ -1,14 +1,9 @@
 {
-    "_readme": [
-        "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-        "This file is @generated automatically"
-    ],
-    "content-hash": "4e632347896a09ab8bc5bfd599edc657",
     "packages": [
         {
             "name": "benlumia007/backdrop-template-helpers",
             "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/benlumia007/backdrop-template-helpers.git",
@@ -23,7 +18,9 @@
             "require": {
                 "php": ">=7.4"
             },
+            "time": "2023-01-04T22:22:19+00:00",
             "type": "library",
+            "installation-source": "dist",
             "autoload": {
                 "files": [
                     "src/functions-helpers.php"
@@ -53,11 +50,12 @@
                 "issues": "https://github.com/benlumia007/backdrop-template-helpers/issues",
                 "source": "https://github.com/benlumia007/backdrop-template-helpers/tree/1.0.0"
             },
-            "time": "2023-01-04T22:22:19+00:00"
+            "install-path": "../benlumia007/backdrop-template-helpers"
         },
         {
             "name": "benlumia007/backdrop-tools",
             "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/benlumia007/backdrop-tools.git",
@@ -72,7 +70,9 @@
             "require": {
                 "php": ">=7.4"
             },
+            "time": "2023-01-04T22:30:26+00:00",
             "type": "library",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "Backdrop\\Tools\\": "src/"
@@ -99,18 +99,9 @@
                 "issues": "https://github.com/benlumia007/backdrop-tools/issues",
                 "source": "https://github.com/benlumia007/backdrop-tools/tree/1.0.0"
             },
-            "time": "2023-01-04T22:30:26+00:00"
+            "install-path": "../benlumia007/backdrop-tools"
         }
     ],
-    "packages-dev": [],
-    "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
-    "prefer-stable": false,
-    "prefer-lowest": false,
-    "platform": {
-        "php": ">=8.0"
-    },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "dev": true,
+    "dev-package-names": []
 }

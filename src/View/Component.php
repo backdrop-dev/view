@@ -44,7 +44,7 @@ class Component implements ViewContract {
 	 * @access protected
 	 * @var    string
 	 */
-	protected $name = '';
+	protected string $name = '';
 
 	/**
 	 * Array of slugs to look for. This creates the hierarchy based on the
@@ -53,9 +53,9 @@ class Component implements ViewContract {
 	 *
 	 * @since  1.0.0
 	 * @access protected
-	 * @var    string
+	 * @var    string|array
 	 */
-	protected $slugs = [];
+	protected string|array $slugs = [];
 
 	/**
 	 * An array of data that is passed into the view template.
@@ -64,16 +64,16 @@ class Component implements ViewContract {
 	 * @access protected
 	 * @var    array
 	 */
-	protected $data = [];
+	protected array $data = [];
 
 	/**
 	 * The template filename.
 	 *
 	 * @since  1.0.0
 	 * @access protected
-	 * @var    string
+	 * @var    ?string
 	 */
-	protected $template = null;
+	protected ?string $template = null;
 
 	/**
 	 * Sets up the view properties.
@@ -82,10 +82,10 @@ class Component implements ViewContract {
 	 * @access public
 	 * @param  string  $name
 	 * @param  array   $slugs
-	 * @param  object  $data
-	 * @return object
+	 * @param  Collection|null  $data
+	 * @return void
 	 */
-	public function __construct( $name, $slugs = [], Collection $data = null ) {
+	public function __construct( string $name, array $slugs = [], Collection|null $data = null ) {
 
 		$this->name  = $name;
 		$this->slugs = ( array ) $slugs;
@@ -115,7 +115,7 @@ class Component implements ViewContract {
 	 * @access public
 	 * @return array
 	 */
-	public function slugs() {
+	public function slugs(): array {
 		return ( array ) $this->slugs;
 	}
 
@@ -127,7 +127,7 @@ class Component implements ViewContract {
 	 * @access protected
 	 * @return array
 	 */
-	protected function hierarchy() {
+	protected function hierarchy(): array {
 
 		// Uses the slugs to build a hierarchy.
 		foreach ( $this->slugs as $slug ) {
@@ -154,7 +154,7 @@ class Component implements ViewContract {
 	 * @access protected
 	 * @return string
 	 */
-	protected function locate() {
+	protected function locate(): string {
 		return locate_template( $this->hierarchy() );
 	}
 
@@ -165,7 +165,7 @@ class Component implements ViewContract {
 	 * @access public
 	 * @return string
 	 */
-	public function template() {
+	public function template(): string {
 
 		if ( is_null( $this->template ) ) {
 			$this->template = $this->locate();
@@ -227,7 +227,7 @@ class Component implements ViewContract {
 	 * @access protected
 	 * @return void
 	 */
-	protected function templatePartCompat() {
+	protected function templatePartCompat(): void {
 
 		// The slug is a string in WP and we have an array. So, we're
 		// just going to use the first item of the array in this case.
@@ -254,7 +254,7 @@ class Component implements ViewContract {
 	 * @access protected
 	 * @return void
 	 */
-	protected function maybeShiftAttachment() {
+	protected function maybeShiftAttachment(): void {
 
 		if ( ! in_the_loop() || 'attachment' !== get_post_type() ) {
 			return;
