@@ -64,7 +64,7 @@ class Component implements ViewContract {
      * @access protected
      * @var    array
      */
-    protected $data = [];
+    protected array $data = [];
 
     /**
      * The template filename.
