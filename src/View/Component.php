@@ -110,7 +110,7 @@ class Component implements ViewContract {
     /**
      * Returns the array of slugs.
      *
-     * @since  5.1.0
+     * @since  1.0.0
      * @access public
      * @return array
      */
@@ -126,7 +126,7 @@ class Component implements ViewContract {
      * @access protected
      * @return array
      */
-    protected function hierarchy() {
+    protected function hierarchy(): array {
 
         // Uses the slugs to build a hierarchy.
         foreach ( $this->slugs as $slug ) {
