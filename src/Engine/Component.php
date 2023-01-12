@@ -63,7 +63,7 @@ class Component {
      * @param  array|Collection  $data
      * @return void
      */
-    public function display( $name, $slugs = [], $data = [] ) {
+    public function display( string $name, array|string $slugs = [], array|Collection $data = [] ): void {
         $this->view( $name, $slugs, $data )->display();
     }
 
@@ -77,7 +77,7 @@ class Component {
      * @param  array|Collection  $data
      * @return string
      */
-    public function render( $name, $slugs = [], $data = [] ) {
+    public function render( string $name, array|string $slugs = [], array|Collection $data = [] ): string {
         return $this->view( $name, $slugs, $data )->render();
     }
 }
