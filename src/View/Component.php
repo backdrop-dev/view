@@ -44,7 +44,7 @@ class Component implements ViewContract {
      * @access protected
      * @var    string
      */
-    protected $name = '';
+    protected string $name = '';
 
     /**
      * Array of slugs to look for. This creates the hierarchy based on the
