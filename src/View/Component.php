@@ -80,21 +80,22 @@ class Component implements ViewContract {
      *
      * @since  1.0.0
      * @access public
-     * @param string $name
-     * @param array $slugs
-     * @param array|Collection|null $data
+     * @param  string  $name
+     * @param  array   $slugs
+     * @param  array  $data
+     * @return object
      */
-	public function __construct( string $name, array $slugs = [], array|Collection $data = null ) {
+    public function __construct( string $name, array $slugs = [], array $data = null ) {
 
-		$this->name  = $name;
-		$this->slugs = ( array ) $slugs;
-		$this->data  = $data;
+        $this->name  = $name;
+        $this->slugs = ( array ) $slugs;
+        $this->data  = $data;
 
-		// Apply filters after all the properties have been assigned.
-		// This way, the full object is available to filters.
-		$this->slugs = apply_filters( "backdrop/template/view/{$this->name}/slugs", $this->slugs, $this );
-		$this->data  = apply_filters( "backdrop/template/view/{$this->name}/data",  $this->data,  $this );
-	}
+        // Apply filters after all the properties have been assigned.
+        // This way, the full object is available to filters.
+        $this->slugs = apply_filters( "backdrop/template/view/{$this->name}/slugs", $this->slugs, $this );
+        $this->data  = apply_filters( "backdrop/template/view/{$this->name}/data",  $this->data,  $this );
+    }
 
 	/**
 	 * When attempting to use the object as a string, return the template output.
