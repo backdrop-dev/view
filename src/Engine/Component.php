@@ -63,7 +63,8 @@ class Component {
      * @param  array|Collection  $data
      * @return void
      */
-    public function display( string $name, array|string $slugs = [], array|Collection $data = [] ): void {
+    public function display( string $name, array $slugs = [], array $data = [] ) {
+
         $this->view( $name, $slugs, $data )->display();
     }
 
