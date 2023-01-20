@@ -44,7 +44,7 @@ class Component implements ViewContract {
      * @access protected
      * @var    string
      */
-    protected string $name = '';
+    protected $name = '';
 
     /**
      * Array of slugs to look for. This creates the hierarchy based on the
@@ -55,7 +55,7 @@ class Component implements ViewContract {
      * @access protected
      * @var    string|array
      */
-    protected string|array $slugs = [];
+    protected $slugs = [];
 
     /**
      * An array of data that is passed into the view template.
@@ -64,7 +64,7 @@ class Component implements ViewContract {
      * @access protected
      * @var    array|Collection
      */
-    protected array|Collection $data = [];
+    protected $data = [];
 
     /**
      * The template filename.
@@ -73,7 +73,7 @@ class Component implements ViewContract {
      * @access protected
      * @var    ?string
      */
-    protected ?string $template = null;
+    protected $template = null;
 
     /**
      * Sets up the view properties.
