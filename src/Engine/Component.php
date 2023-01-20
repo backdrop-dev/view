@@ -78,7 +78,8 @@ class Component {
      * @param  array|Collection  $data
      * @return string
      */
-    public function render( string $name, array|string $slugs = [], array|Collection $data = [] ): string {
+    public function render( string $name, array $slugs = [], array $data = [] ): string {
+
         return $this->view( $name, $slugs, $data )->render();
     }
 }
