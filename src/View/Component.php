@@ -84,16 +84,16 @@ class Component implements ViewContract {
      * @param string|array $slugs
      * @param Collection|null $data
      */
-    public function __construct( string $name, string|array $slugs = [], Collection $data = null ) {
+    public function __construct( string $name, array $slugs = [], Collection $data = null ) {
 
         $this->name  = $name;
-        $this->slugs = (array) $slugs;
+        $this->slugs = ( array ) $slugs;
         $this->data  = $data;
 
         // Apply filters after all the properties have been assigned.
         // This way, the full object is available to filters.
-        $this->slugs = apply_filters( "hybrid/view/{$this->name}/slugs", $this->slugs, $this );
-        $this->data  = apply_filters( "hybrid/view/{$this->name}/data",  $this->data,  $this );
+        $this->slugs = apply_filters( "backdrop/template/view/{$this->name}/slugs", $this->slugs, $this );
+        $this->data  = apply_filters( "backdrop/template/view/{$this->name}/data",  $this->data,  $this );
     }
 
     /**
@@ -104,6 +104,7 @@ class Component implements ViewContract {
      * @return string
      */
     public function __toString() {
+
         return $this->render();
     }
 
@@ -115,6 +116,7 @@ class Component implements ViewContract {
      * @return array
      */
     public function slugs(): array {
+
         return (array) $this->slugs;
     }
 
@@ -153,6 +155,7 @@ class Component implements ViewContract {
      * @return string
      */
     protected function locate(): string {
+
         return locate_template( $this->hierarchy() );
     }
 
@@ -179,7 +182,7 @@ class Component implements ViewContract {
      * @access public
      * @return void
      */
-    public function display(): void {
+    public function display() {
 
         // Compatibility with core WP's template parts.
         $this->templatePartCompat();
@@ -227,7 +230,7 @@ class Component implements ViewContract {
      * @access protected
      * @return void
      */
-    protected function templatePartCompat(): void {
+    protected function templatePartCompat() {
 
         // The slug is a string in WP and we have an array. So, we're
         // just going to use the first item of the array in this case.
@@ -253,7 +256,7 @@ class Component implements ViewContract {
      * @access protected
      * @return void
      */
-    protected function maybeShiftAttachment(): void {
+    protected function maybeShiftAttachment() {
 
         if ( ! in_the_loop() || 'attachment' !== get_post_type() ) {
             return;
