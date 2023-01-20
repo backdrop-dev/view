@@ -40,7 +40,7 @@ class Component {
      * @param  array|Collection  $data
      * @return View
      */
-    public function view( string $name, array|string $slugs = [], array|Collection $data = [] ): View {
+    public function view( string $name, array $slugs = [], array $data = [] ): View {
 
         if ( ! $data instanceof Collection ) {
             $data = new Collection( (array) $data );
