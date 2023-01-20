@@ -189,9 +189,6 @@ class Component implements ViewContract {
 
         if ( $this->template() ) {
 
-            // Maybe remove core WP's `prepend_attachment`.
-            $this->maybeShiftAttachment();
-
             // Extract the data into individual variables. Each of
             // these variables will be available in the template.
             if ( $this->data instanceof Collection ) {
@@ -244,32 +241,6 @@ class Component implements ViewContract {
             // Compat with `get_template_part()`.
         } else {
             do_action( "get_template_part_{$this->name}", $this->name, $slug );
-        }
-    }
-
-    /**
-     * Removes core WP's `prepend_attachment` filter whenever a theme is
-     * building custom attachment templates. We'll assume that the theme
-     * author will handle the appropriate output in the template itself.
-     *
-     * @since  1.0.0
-     * @access protected
-     * @return void
-     */
-    protected function maybeShiftAttachment() {
-
-        if ( ! in_the_loop() || 'attachment' !== get_post_type() ) {
-            return;
-        }
-
-        if ( in_array( $this->name, [ 'entry', 'post', 'entry/archive', 'entry/single' ] ) ) {
-
-            remove_filter( 'the_content', 'prepend_attachment' );
-
-        } elseif ( 'embed' === $this->name ) {
-
-            remove_filter( 'the_content',       'prepend_attachment'          );
-            remove_filter( 'the_excerpt_embed', 'wp_embed_excerpt_attachment' );
         }
     }
 }
