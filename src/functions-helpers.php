@@ -13,7 +13,7 @@
 
 namespace Backdrop\Template\View;
 
-use Backdrop\Template\View\Contracts\Engine;
+use Backdrop\Template\View\Engine\Component as Engine;
 use Backdrop\Proxies\App;
 
 if ( ! function_exists( __NAMESPACE__ . '\\view' ) ) {
