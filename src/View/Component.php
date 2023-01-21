@@ -25,7 +25,6 @@
 namespace Backdrop\Template\View\View;
 
 use Backdrop\Template\View\Contracts\View as ViewContract;
-use Backdrop\Tools\Collection;
 use function Backdrop\Template\Helpers\locate as locate_template;
 
 /**
@@ -58,15 +57,6 @@ class Component implements ViewContract {
     protected $slugs = [];
 
     /**
-     * An array of data that is passed into the view template.
-     *
-     * @since  1.0.0
-     * @access protected
-     * @var    array|Collection
-     */
-    protected $data = [];
-
-    /**
      * The template filename.
      *
      * @since  1.0.0
@@ -82,18 +72,15 @@ class Component implements ViewContract {
      * @access public
      * @param string $name
      * @param string|array $slugs
-     * @param Collection|null $data
      */
-    public function __construct( string $name, array $slugs = [], Collection $data = null ) {
+    public function __construct( string $name, array $slugs = [] ) {
 
         $this->name  = $name;
         $this->slugs = ( array ) $slugs;
-        $this->data  = $data;
 
         // Apply filters after all the properties have been assigned.
         // This way, the full object is available to filters.
         $this->slugs = apply_filters( "backdrop/template/view/{$this->name}/slugs", $this->slugs, $this );
-        $this->data  = apply_filters( "backdrop/template/view/{$this->name}/data",  $this->data,  $this );
     }
 
     /**

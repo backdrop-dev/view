@@ -20,7 +20,6 @@ namespace Backdrop\Template\View\Engine;
 
 use Backdrop\Proxies\App;
 use Backdrop\Template\View\View\Component as View;
-use Backdrop\Tools\Collection;
 
 /**
  * Egine class
@@ -37,20 +36,11 @@ class Component {
      * @access public
      * @param  string            $name
      * @param  array|string      $slugs
-     * @param  array|Collection  $data
      * @return View
      */
-    public function view( string $name, array $slugs = [], array $data = [] ): View {
+    public function view( string $name, array $slugs = [] ): View {
 
-        if ( ! $data instanceof Collection ) {
-            $data = new Collection( (array) $data );
-        }
-
-        // Pass the engine itself along so that it can be used directly
-        // in views.
-        $data->add( 'engine', $this );
-
-        return App::resolve( View::class, compact( 'name', 'slugs', 'data' ) );
+        return App::resolve( View::class, compact( 'name', 'slugs' ) );
     }
 
     /**
@@ -60,12 +50,11 @@ class Component {
      * @access public
      * @param  string            $name
      * @param  array|string      $slugs
-     * @param  array|Collection  $data
      * @return void
      */
-    public function display( string $name, array $slugs = [], array $data = [] ) {
+    public function display( string $name, array $slugs = [] ) {
 
-        $this->view( $name, $slugs, $data )->display();
+        $this->view( $name, $slugs )->display();
     }
 
     /**
@@ -75,11 +64,10 @@ class Component {
      * @access public
      * @param  string            $name
      * @param  array|string      $slugs
-     * @param  array|Collection  $data
      * @return string
      */
-    public function render( string $name, array $slugs = [], array $data = [] ): string {
+    public function render( string $name, array $slugs = [] ): string {
 
-        return $this->view( $name, $slugs, $data )->render();
+        return $this->view( $name, $slugs )->render();
     }
 }
