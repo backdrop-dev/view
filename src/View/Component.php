@@ -130,7 +130,7 @@ class Component {
         $templates[] = "{$this->name}.php";
 
         // Allow developers to overwrite the hierarchy.
-        return apply_filters( "hybrid/view/{$this->name}/hierarchy", $templates, $this->slugs );
+        return apply_filters( "backdrop/template/view/{$this->name}/hierarchy", $templates, $this->slugs );
     }
 
     /**
