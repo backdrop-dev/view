@@ -48,8 +48,8 @@ class Component {
      *
      * @since  1.0.0
      * @access public
-     * @param  string            $name
-     * @param  array|string      $slugs
+     * @param  string           $name
+     * @param  array|string     $slugs
      * @return void
      */
     public function display( string $name, array $slugs = [] ) {

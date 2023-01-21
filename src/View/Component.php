@@ -24,7 +24,6 @@
  */
 namespace Backdrop\Template\View\View;
 
-use Backdrop\Template\View\Contracts\View as ViewContract;
 use function Backdrop\Template\Helpers\locate as locate_template;
 
 /**
@@ -33,7 +32,7 @@ use function Backdrop\Template\Helpers\locate as locate_template;
  * @since  1.0.0
  * @access public
  */
-class Component implements ViewContract {
+class Component {
 
     /**
      * Name of the view. This is primarily used as the folder name. However,
