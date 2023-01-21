@@ -19,7 +19,6 @@ namespace Backdrop\Template\View;
 use Backdrop\Core\ServiceProvider;
 use Backdrop\Template\View\Engine\Component as Engine;
 use Backdrop\Template\View\Contracts\Engine as EngineContract;
-use Backdrop\Template\View\Contracts\View   as ViewContract;
 
 /**
  * View provider class.
@@ -37,15 +36,7 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
-
-		// Bind the view contract.
-		$this->app->bind( ViewContract::class, View::class );
-
-		// Bind a single instance of the engine contract.
+        // Bind a single instance of the engine contract.
 		$this->app->singleton( EngineContract::class, Engine::class );
-
-		// Create aliases for the view and engine.
-		$this->app->alias( ViewContract::class,   'view'        );
-		$this->app->alias( EngineContract::class, 'view/engine' );
 	}
 }
