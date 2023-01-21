@@ -176,16 +176,6 @@ class Component implements ViewContract {
 
         if ( $this->template() ) {
 
-            // Extract the data into individual variables. Each of
-            // these variables will be available in the template.
-            if ( $this->data instanceof Collection ) {
-                extract( $this->data->all() );
-            }
-
-            // Make `$data` and `$view` variables available to templates.
-            $data = $this->data;
-            $view = $this;
-
             // Load the template.
             include( $this->template() );
         }
