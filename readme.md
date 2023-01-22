@@ -19,6 +19,18 @@ To begin, create a new provider as follows.
 $slug->provider( Backdrop\Template\View\Provider::class );
 </pre>
 
+After you have successfully registering and booting the provider, all you have to do is use the following to begin using the view
+<pre>
+Backdrop\Template\View\display( 'something' );
+</pre>
+
+This will create a new template call `something.php`. you can pass an array as well `something, [ 'one, two ]`. The order would be
+<pre>
+something-two.php
+something-one.php
+something.php
+</pre>
+
 ## Copyright and Licenses
 This project is licensed under the GNU GPL, version 2 or later.
 
