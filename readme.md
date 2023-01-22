@@ -31,6 +31,8 @@ something-one.php
 something.php
 </pre>
 
+Please also note that all templates will be located at `public/views` or `resource/views` depending on the project.
+
 ## Copyright and Licenses
 This project is licensed under the GNU GPL, version 2 or later.
 
