@@ -13,34 +13,39 @@
  * @license   https://www.gnu.org/licenses/gpl-2.0.html
  */
 
-/**
- * Define namespace
- */
-namespace Backdrop\Template\View\Engine;
+namespace Backdrop\Template\View;
 
 use Backdrop\Proxies\App;
-use Backdrop\Template\View\View\Component as View;
+use Backdrop\Tools\Collection;
 
 /**
- * Egine class
+ * Engine class
  * 
  * @since  1.0.0
  * @access public
  */
-class Component {
+class Engine {
 
     /**
      * Returns a View object.
      *
      * @since  1.0.0
      * @access public
-     * @param  string            $name
-     * @param  array|string      $slugs
+     * @param  string			$name
+     * @param  array|string		$slugs
+     * @param array|Collection	$data
      * @return View
      */
-    public function view( string $name, array $slugs = [] ): View {
+    public function view( string $name, $slugs = [], $data = [] ): View {
 
-        return App::resolve( View::class, compact( 'name', 'slugs' ) );
+        if ( ! $data instanceof Collection ) {
+
+            $data = new Collection( ( array ) $data );
+        }
+
+        $data->add( 'engine', $this );
+
+        return App::resolve( View::class, compact( 'name', 'slugs', 'data' ) );
     }
 
     /**
@@ -50,11 +55,12 @@ class Component {
      * @access public
      * @param  string           $name
      * @param  array|string     $slugs
+     * @param  array|Collection	$data
      * @return void
      */
-    public function display( string $name, array $slugs = [] ) {
+    public function display( string $name, $slugs = [], $data = [] ) {
 
-        $this->view( $name, $slugs )->display();
+        $this->view( $name, $slugs, $data )->display();
     }
 
     /**
@@ -62,12 +68,13 @@ class Component {
      *
      * @since  1.0.0
      * @access public
-     * @param  string            $name
-     * @param  array|string      $slugs
+     * @param  string			$name
+     * @param  array|string		$slugs
+     * @param  array|Collection	$data
      * @return string
      */
-    public function render( string $name, array $slugs = [] ): string {
+    public function render(string $name, $slugs = [], $data = [] ): string {
 
-        return $this->view( $name, $slugs )->render();
+        return $this->view( $name, $slugs, $data )->render();
     }
 }

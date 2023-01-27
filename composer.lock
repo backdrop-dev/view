@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "518cac5e3fabe0e38c107c2ac548738a",
+    "content-hash": "d15c4c807fb4447968b6b4fae468de2c",
     "packages": [
         {
             "name": "benlumia007/backdrop",
@@ -109,12 +109,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/benlumia007/backdrop-template-helpers.git",
-                "reference": "4c95d4710406e31901d6e992737ae3eb4331a83e"
+                "reference": "0e9776c6b4b3624b0a6798d7c9310d772b2e1989"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/benlumia007/backdrop-template-helpers/zipball/4c95d4710406e31901d6e992737ae3eb4331a83e",
-                "reference": "4c95d4710406e31901d6e992737ae3eb4331a83e",
+                "url": "https://api.github.com/repos/benlumia007/backdrop-template-helpers/zipball/0e9776c6b4b3624b0a6798d7c9310d772b2e1989",
+                "reference": "0e9776c6b4b3624b0a6798d7c9310d772b2e1989",
                 "shasum": ""
             },
             "require": {
@@ -150,7 +150,53 @@
                 "issues": "https://github.com/benlumia007/backdrop-template-helpers/issues",
                 "source": "https://github.com/benlumia007/backdrop-template-helpers/tree/1.0.0"
             },
-            "time": "2023-01-19T23:23:48+00:00"
+            "time": "2023-01-23T16:40:07+00:00"
+        },
+        {
+            "name": "benlumia007/backdrop-tools",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/benlumia007/backdrop-tools.git",
+                "reference": "20aabb07c7c832257b9066b29966ce3bacda5924"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/benlumia007/backdrop-tools/zipball/20aabb07c7c832257b9066b29966ce3bacda5924",
+                "reference": "20aabb07c7c832257b9066b29966ce3bacda5924",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Backdrop\\Tools\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Lu",
+                    "email": "benlumia007@gmail.com",
+                    "homepage": "https://benjlu.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A core that helps you build amazing themes",
+            "homepage": "https://github.com/benlumia007/backdrop-tools",
+            "keywords": [
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/benlumia007/backdrop-tools/issues",
+                "source": "https://github.com/benlumia007/backdrop-tools/tree/1.0.0"
+            },
+            "time": "2023-01-19T23:57:25+00:00"
         }
     ],
     "packages-dev": [],

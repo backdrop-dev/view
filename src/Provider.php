@@ -17,7 +17,7 @@
 namespace Backdrop\Template\View;
 
 use Backdrop\Core\ServiceProvider;
-use Backdrop\Template\View\Engine\Component as Engine;
+use Backdrop\Template\View\Engine as Engine;
 
 /**
  * View provider class.
