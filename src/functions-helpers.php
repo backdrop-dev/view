@@ -11,7 +11,7 @@
  * @license   https://www.gnu.org/licenses/gpl-2.0.html
  */
 
-namespace Backdrop\Template\View;
+namespace Backdrop\View;
 
 use Backdrop\Proxies\App;
 use Backdrop\Tools\Collection;

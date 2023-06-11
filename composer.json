@@ -1,10 +1,8 @@
 {
-    "name": "benlumia007/backdrop-template-view",
-    "description": "A core that helps you build amazing themes",
-    "keywords": [
-        "wordpress"
-    ],
-    "homepage": "https://github.com/benlumia007/backdrop-template-view",
+    "name": "backdrop-dev/view",
+    "description": "System for setting up and rendering theme template files. Views are a bit like a suped-up version of the core WordPress get_template_part() function.",
+    "keywords": [ "classicpress", "wordpress" ],
+    "homepage": "https://github.com/backdrop-dev/view",
     "license": "GPL-2.0-or-later",
     "authors": [
         {
@@ -16,7 +14,7 @@
     ],
     "autoload": {
         "psr-4": {
-          "Backdrop\\Template\\View\\": "src/"
+          "Backdrop\\View\\": "src/"
 		},
         "files": [
             "src/functions-helpers.php"
@@ -24,8 +22,8 @@
     },
     "require": {
         "php": ">=7.1",
-        "benlumia007/backdrop": "^1.0",
-        "benlumia007/backdrop-template-helpers": "^1.0",
-        "benlumia007/backdrop-tools": "^1.0"
+        "backdrop-dev/framework": "^1.0",
+        "backdrop-dev/template-helpers": "^1.0",
+        "backdrop-dev/tools": "^1.0"
     }
 }
