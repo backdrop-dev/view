@@ -88,8 +88,8 @@ class View {
 
         // Apply filters after all the properties have been assigned.
         // This way, the full object is available to filters.
-        $this->slugs = apply_filters( "backdrop/template/view/{$this->name}/slugs", $this->slugs, $this );
-        $this->data  = apply_filters( "backdrop/template/view/{$this->name}/data",  $this->data,  $this );
+        $this->slugs = apply_filters( "backdrop/view/{$this->name}/slugs", $this->slugs, $this );
+        $this->data  = apply_filters( "backdrop/view/{$this->name}/data",  $this->data,  $this );
     }
 
     /**
@@ -99,7 +99,7 @@ class View {
      * @access public
      * @return string
      */
-    public function __toString() {
+    public function __toString(): string {
 
         return $this->render();
     }
@@ -181,7 +181,7 @@ class View {
      * @access public
      * @return void
      */
-    public function display() {
+    public function display(): void {
 
         // Compatibility with core WP's template parts.
         $this->templatePartCompat();
@@ -227,7 +227,7 @@ class View {
      * @access protected
      * @return void
      */
-    protected function templatePartCompat() {
+    protected function templatePartCompat(): void {
 
         // The slug is a string in WP and we have an array. So, we're
         // just going to use the first item of the array in this case.
