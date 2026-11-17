@@ -27,6 +27,6 @@
         "php": ">=7.4",
         "backdrop-dev/framework": "^2.0",
         "backdrop-dev/tools": "dev-develop",
-        "backdrop-dev/template-helpers": "dev-develop"
+        "backdrop-dev/template-helpers": "^1.0"
     }
 }
