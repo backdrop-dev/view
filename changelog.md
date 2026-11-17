@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.3 - November 17, 2026
+Changed
+* Requires `backdrop-dev/tools` ^1.0 instead of `dev-develop`, now that it is released.
+
 ## 1.0.2 - November 17, 2026
 Changed
 * Requires `backdrop-dev/template-helpers` ^1.0 instead of `dev-develop`, now that it is released. `backdrop-dev/tools` still requires `dev-develop` until it has a release.
