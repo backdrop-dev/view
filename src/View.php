@@ -80,7 +80,7 @@ class View {
      * @since    1.0.0
      * @access    public
      */
-    public function __construct( string $name, $slugs = [], Collection $data = null ) {
+    public function __construct( string $name, $slugs = [], ?Collection $data = null ) {
 
         $this->name  = $name;
         $this->slugs = ( array ) $slugs;
