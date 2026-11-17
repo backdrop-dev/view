@@ -1,7 +1,10 @@
 {
     "name": "backdrop-dev/view",
     "description": "System for setting up and rendering theme template files. Views are a bit like a suped-up version of the core WordPress get_template_part() function.",
-    "keywords": [ "classicpress", "wordpress" ],
+    "keywords": [
+        "classicpress",
+        "wordpress"
+    ],
     "homepage": "https://github.com/backdrop-dev/view",
     "license": "GPL-2.0-or-later",
     "authors": [
@@ -14,13 +17,16 @@
     ],
     "autoload": {
         "psr-4": {
-          "Backdrop\\View\\": "src/"
-		},
+            "Backdrop\\View\\": "src/"
+        },
         "files": [
             "src/functions-helpers.php"
         ]
     },
     "require": {
-        "php": ">=7.1"
+        "php": ">=7.4",
+        "backdrop-dev/framework": "^2.0",
+        "backdrop-dev/tools": "dev-develop",
+        "backdrop-dev/template-helpers": "dev-develop"
     }
 }
