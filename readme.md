@@ -4,7 +4,7 @@ The Backdrop Template View is a drop-in package for [Backdrop](https://github.co
 ## Requirements
 * [ClassicPress](https://www.classicpress.net)
 * [WordPress](https://wordpress.org)
-* [PHP](https://www.php.net/releases/7_1_33.php)
+* [PHP 7.4](https://www.php.net/releases/7_4_0.php)
 * [Composer](https://getcomposer.org)
 
 ## Installation
